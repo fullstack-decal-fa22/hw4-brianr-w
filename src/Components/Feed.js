@@ -2,19 +2,19 @@ import { useState } from 'react';
 import React from 'react';
 import Menu from './Menu';
 import Block from './Block';
+import { render } from '@testing-library/react';
 
 const Feed = () => {
-    /* TODO: Declare a new state variable to keep track of the blocks on your Blockstagram feed! */
-    // Refer to Hint 2 for more help!
+    const [block1, block2] = React.useState(true);
+    block1.map(Block);
+    block2.map(Block);
 
-    /* Use the map() function to render multiple Blocks! */
-    const posts = null; // TODO: edit this variable
+    const posts = Feed.useState(0);
 
     return (
         <div>
             <Menu></Menu>
-
-            {/* Below is where all of your Blocks should render! */}
+            {render()}
             {posts}
         </div>
     );
